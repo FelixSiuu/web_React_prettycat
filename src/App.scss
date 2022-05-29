@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+#root,
+.app{
+  width: 100%;
+  height: 100%;
+}
+.app{
+  font-family: 'Andika', sans-serif;
+}
+
+$small: 768px;
+$medium: 769px;
+
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin parrentBox{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 56px;
+}
