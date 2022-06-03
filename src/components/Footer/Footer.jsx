@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
@@ -18,16 +17,6 @@ export default function Footer() {
     { id: 3, label: 'FAVOURITES', icon: <FavoriteIcon /> }
   ])
   const navigate = useNavigate()
-  const location = useLocation()
-
-  useEffect(() => {
-    const pathName = location.pathname.split('/')[1].toUpperCase()
-    const found = navData.find((item) => {
-      return item.label === pathName
-    })
-    setValue(found.id)
-    // eslint-disable-next-line 
-  }, [value])
 
   return (
     <div>
