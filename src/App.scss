@@ -25,12 +25,6 @@ $medium: 769px;
   align-items: center;
 }
 
-@mixin parrentBox{
-  width: 100%;
-  height: 100%;
-  padding-bottom: 56px;
-}
-
 @mixin imgBox{
   width: 80%;
   position: relative;

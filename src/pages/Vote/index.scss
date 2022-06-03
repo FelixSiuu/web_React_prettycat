@@ -1,7 +1,6 @@
 @import '../../App.scss';
 
 .vote{
-  @include parrentBox;
   .voting{
     @include flexCenter;
     width: 100%;

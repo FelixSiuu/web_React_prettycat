@@ -23,7 +23,6 @@ export default function Breeds() {
     setMetric(data[0].breeds[0].weight.metric)
     // refference image
     setImg(data[0].url)
-    console.log('get breed info successful')
   },[breedId])
 
   // get selected breed from child(SelectBar)
@@ -35,7 +34,6 @@ export default function Breeds() {
   const getBreedsList = useCallback(async () => {
     const {data} = await getBreedsListRequest()
     setList(data)
-    console.log('get breeds list successful')
   },[])
 
   useEffect(() => {

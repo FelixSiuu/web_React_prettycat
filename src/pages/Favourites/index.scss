@@ -2,8 +2,8 @@
 
 
 .fovaurite{
-  @include parrentBox;
   position: relative;
+  padding-bottom: 56px;
   .css-uym98a-MuiImageList-root{
     width: 100%;
     height: 100%;
@@ -15,7 +15,7 @@
     top: 0;
     left: 0;
     transition: all 300ms;
-    z-index: 2;
+    z-index: 1;
     .mask{
       position: absolute;
       width: 100%;
@@ -26,12 +26,12 @@
       @include flexCenter;
       flex-direction: column;
       overflow: hidden;
-      position: absolute;
-      top: 50%;
+      position: fixed;
       left: 50%;
+      top: 50%;
       transform: translate(-50%, -50%);
       width: 70%;
-      height: 20%;
+      height: 150px;
       border-radius: 5px;
       background-color: #444446;
       color: white;
@@ -51,6 +51,7 @@
     }
   }
   .dialog_close{
+    position: absolute;
     opacity: 0;
     z-index: -1;
   }

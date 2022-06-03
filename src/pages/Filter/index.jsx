@@ -33,20 +33,17 @@ export default function Filter() {
     const {data} = await getBreedsListRequest()
     // insert 'none' option for not selected breed
     setBreedList([{ 'id':'', 'name': 'None' }, ...data])
-    console.log('get breeds list successful')
   },[])
 
   // get categories list
   const getCategoriesList = useCallback(async () => {
     const {data} = await getCategoriesListRequest()
     setCateList([{ 'id':'', 'name': 'None' }, ...data])
-    console.log('get categories list successful')
   },[])
 
   // get filter images
   const getFilterImages = useCallback(async () => {
     const {data} = await getFilterImagesRequest(breedId, cateId, mineType, limit)
-    console.log('get filter data successful')
     setFilter(data)
   },[breedId, cateId, mineType, limit])
 

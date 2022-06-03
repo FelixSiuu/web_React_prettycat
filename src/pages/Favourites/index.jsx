@@ -25,16 +25,14 @@ export default function Favourites() {
   const getFavList = async () => {
     const { data } = await getFavListRequest('lovecatguy')
     setFavList(data)
-    console.log('get fav list successful')
   }
 
   const deleteFavImg = async () => {
-    const response = await unFavRequest(favId)
-    if (response.status === 200) console.log('delete this fav image')
+    await unFavRequest(favId)
   }
 
   // asking user for a answer whether delete a fav img
-  const beforeConfirm = (e) => {
+  const handleClick = (e) => {
     // show dialog
     setOpen(true)
     // also set image fav id
@@ -79,7 +77,7 @@ export default function Favourites() {
                       id={item.id}
                       sx={{ color: 'rgba(255, 255, 255, 0.44)' }}
                       onClick={(e) => {
-                        beforeConfirm(e)
+                        handleClick(e)
                       }}
                     >
                       <FavoriteIcon color="error" />
@@ -91,13 +89,9 @@ export default function Favourites() {
           })
         }
       </ImageList>
+
       <div className={open ? 'dialog' : 'dialog_close'}>
-        <div
-          className="mask"
-          onClick={() => {
-            setOpen(false)
-          }}
-        ></div>
+        <div className="mask" onClick={() => {setOpen(false)}}></div>
         <div className="dialog_content">
           <span className="dialog_title">
             Undo Fav this image? &nbsp; <PetsIcon color="warning" />

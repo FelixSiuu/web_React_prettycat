@@ -29,19 +29,16 @@ export default function Vote() {
   }
 
   async function voteImg() {
-    const response = await voteRequest(bodyForVote)
-    if (response.status === 200) console.log('vote successful')
+    await voteRequest(bodyForVote)
   }
 
   async function saveFavImg() {
     const response = await favRequest(bodyForFav)
-    if (response.status === 200) console.log('fav this image')
     setFavId(response.data.id)
   }
 
   async function deleteFavImg() {
-    const response = await unFavRequest(favId)
-    if (response.status === 200) console.log('delete this fav image')
+    await unFavRequest(favId)
   }
 
   const bodyForFav = {

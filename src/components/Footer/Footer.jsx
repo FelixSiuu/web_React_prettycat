@@ -27,6 +27,7 @@ export default function Footer() {
       return item.label === pathName
     })
     setValue(found.id)
+    // eslint-disable-next-line 
   }, [value])
 
   return (

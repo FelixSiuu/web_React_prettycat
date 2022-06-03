@@ -1,7 +1,6 @@
 @import '../../App.scss';
 
 .filter{
-  @include parrentBox;
   @include flexCenter;
   justify-content: flex-start;
   flex-direction: column;
