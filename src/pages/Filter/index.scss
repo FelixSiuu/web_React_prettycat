@@ -1,0 +1,31 @@
+@import '../../App.scss';
+
+.filter{
+  @include parrentBox;
+  @include flexCenter;
+  justify-content: flex-start;
+  flex-direction: column;
+  .selectBar_box{
+    height: 20vh;
+    @include flexCenter;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 90%;
+    .selectbar{
+      flex: 45%;
+    }
+  }
+  .filter_img_container{
+    width: 95%;
+    padding: 20px 0 76px 0;
+    .filter_img_box{
+      img{
+        width: 100%;
+      }
+    }
+    .noRes{
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+}

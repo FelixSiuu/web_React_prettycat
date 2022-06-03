@@ -1,0 +1,13 @@
+@import '../../App.scss';
+
+.selectbar{
+  @include flexCenter;
+  width: 80%;
+  margin-top: 3vh;
+  .css-ece9u5{
+    width: 80%;
+  }
+}
+.MuiPopover-paper{
+  max-height: 50% !important;
+}

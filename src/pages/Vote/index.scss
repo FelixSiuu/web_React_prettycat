@@ -24,20 +24,27 @@
     @include flexCenter;
     flex-direction: column;
     height: 85vh;
-    padding-bottom: 56px;
     gap: 5%;
+    padding-bottom: 56px;
     .img_box{
       @include flexCenter;
-      width: 80%;
-      position: relative;
-      box-shadow: 0 5px 5px 5px rgba(0, 0, 0, .1);
-      border: 1px solid #f2f2f2;
+      @include imgBox;
+      @media screen and (max-width: $small) {
+        height: 80%;
+      }
+      @media screen and (min-width: $medium) {
+        width: 70%;
+        height: 90%;
+      }
       &:hover .fav_box_pc{
         height: 10%;
         opacity: 1;
       }
       .fav_box_pc{
         @include flexCenter;
+        @media screen and (max-width: $small) {
+          display: none;
+        }
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -58,26 +65,14 @@
         max-height: 100%;
       }
     }
-    .fav_box_mobile span{
-      @include flexCenter;
-      color: #222;
-      font-weight: bold;
-    }
-    @media screen and (max-width: $small) {
-      .img_box{
-        height: 80%;
+    .fav_box_mobile {
+      @media screen and (min-width: $medium) {
+          display: none ;
       }
-      .fav_box_pc{
-        display: none !important;
-      }
-    }
-    @media screen and (min-width: $medium) {
-      .img_box{
-        width: 70% ;
-        height: 90% ;
-      }
-      .fav_box_mobile{
-        display: none ;
+      span{
+        @include flexCenter;
+        color: #222;
+        font-weight: bold;
       }
     }
   }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
-import './Snackbar.scss'
+import './index.scss'
 
 export default function PositionedSnackbar(props) {
   const [state, setState] = useState({
