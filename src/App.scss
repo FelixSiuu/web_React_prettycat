@@ -30,7 +30,7 @@ $medium: 769px;
   position: relative;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, .1);
   img{
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }

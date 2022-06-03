@@ -11,15 +11,14 @@ import Paper from '@mui/material/Paper'
 
 export default function Footer() {
   const [value, setValue] = useState()
-  const navigate = useNavigate()
-  const location = useLocation()
-
-  const navData = [
+  const [navData] = useState([
     { id: 0, label: 'VOTE', icon: <ThumbsUpDownIcon /> },
     { id: 1, label: 'BREEDS', icon: <FormatListBulletedIcon /> },
     { id: 2, label: 'FILTER', icon: <SavedSearchIcon /> },
     { id: 3, label: 'FAVOURITES', icon: <FavoriteIcon /> }
-  ]
+  ])
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const pathName = location.pathname.split('/')[1].toUpperCase()
