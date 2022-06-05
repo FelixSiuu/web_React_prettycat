@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import PubSub from 'pubsub-js'
 import Button from '@mui/material/Button'
 import CircularProgress from '@mui/material/CircularProgress'
 import ImageList from '@mui/material/ImageList'
@@ -27,6 +28,9 @@ export default function Filter() {
   const [mineType, setMineType] = useState('gif')
   const [limit, setLimit] = useState(10)
   const [filterImages, setFilter] = useState([])
+
+  // publish a value for navbar
+  PubSub.publish('value', 2)
 
   // get breed list
   const getBreedsList = useCallback(async () => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PubSub from 'pubsub-js'
 import { motion } from "framer-motion"
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
@@ -21,6 +22,9 @@ export default function Vote() {
   useEffect(() => {
     getImage()
   }, [])
+
+  // publish a value for navbar
+  PubSub.publish('value', 0)
 
   async function getImage() {
     const { data } = await getImgRequest()

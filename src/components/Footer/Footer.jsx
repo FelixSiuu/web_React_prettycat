@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PubSub from 'pubsub-js'
 import { useNavigate } from 'react-router-dom'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
@@ -18,13 +19,19 @@ export default function Footer() {
   ])
   const navigate = useNavigate()
 
+  // create a function to subscribe to value
+  const mySubscriber = function (_, data) {
+    setValue(data)
+  };
+  PubSub.subscribe('value', mySubscriber)
+
   return (
     <div>
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels
           value={value}
-          onChange={(event, newValue) => {
+          onChange={(_, newValue) => {
             setValue(newValue)
           }}
         >

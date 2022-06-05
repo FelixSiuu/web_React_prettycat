@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import PubSub from 'pubsub-js'
 import { motion } from "framer-motion"
 import Button from '@mui/material/Button'
 import SelectBar from '../../components/SelectBar'
@@ -13,6 +14,9 @@ export default function Breeds() {
   const [breedImg, setImg] = useState("")
   const [metric, setMetric] = useState("")
   const [breedsList, setList] = useState([])
+
+  // publish a value for navbar
+  PubSub.publish('value', 1)
 
   // get breed info
   const getBreedInfo = useCallback(async () => {

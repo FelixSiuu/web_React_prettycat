@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PubSub from 'pubsub-js'
 import Button from '@mui/material/Button'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
@@ -21,6 +22,9 @@ export default function Favourites() {
   useEffect(() => {
     getFavList()
   }, [])
+
+  // publish a value for navbar
+  PubSub.publish('value', 3)
 
   const getFavList = async () => {
     const { data } = await getFavListRequest('lovecatguy')
